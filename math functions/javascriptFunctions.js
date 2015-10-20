@@ -42,3 +42,17 @@ Math.median = function(arr) {
   return arrMedian;
 };
 // console.log(Math.median([1, 5, 3, 9, 7, 8, 10, 22]));
+
+function deepCloneObj(obj) {
+  var newObj = {};
+  for(key in obj) {
+    if (typeof obj[key] === 'object') {
+      newObj[key] = deepCloneObj(obj[key]);
+    }
+    else {
+      newObj[key] = obj[key];
+    }
+  }
+  return newObj;
+}
+// console.log(deepCloneObj(obj));
