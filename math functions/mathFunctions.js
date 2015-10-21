@@ -2,19 +2,19 @@ Math.permutate = function(str) { //find all possible combinations of a given str
   var permutations = [];
   var arr = [];
   function permHelper(str, arr) {
-      if (typeof (str) === 'string') {
-        str = str.split('');
-      }
-      if (str.length === 0) {
-        permutations.push(arr.join(''));
-      }
-      for (var i = 0; i < str.length; i++) {
-          var x = str.splice(i, 1);
-          arr.push(x);
-          permHelper(str, arr);
-          arr.pop();
-          str.splice(i, 0, x);
-      }
+    if (typeof (str) === 'string') {
+      str = str.split('');
+    }
+    if (str.length === 0) {
+      permutations.push(arr.join(''));
+    }
+    for (var i = 0; i < str.length; i++) {
+      var x = str.splice(i, 1);
+      arr.push(x);
+      permHelper(str, arr);
+      arr.pop();
+      str.splice(i, 0, x);
+    }
   }
   permHelper(str, arr);
   return permutations;
@@ -148,3 +148,26 @@ Math.allOdd = function(arr) { //find and return all odd values of an array, no m
   return newArray;
 };
 // console.log(Math.allOdd(array));
+
+Math.isPrime = function(num) { //determine if a given number is prime. 0 and 1 return as neither prime nor composite.
+  var divisor = 2;
+  if (num === 0 || num === 1) {
+    return num + " is neither a prime, nor a composite number";
+  }
+  while (num > divisor) {
+    if (num % divisor === 0) {
+      return false;
+    }
+    else {
+      divisor ++;
+    }
+  }
+  return true;
+};
+// console.log(Math.isPrime(2));
+
+Math.fibonacci = function(num) { //fibonacci it up
+  if(num<=1) { return num; }
+  else { return Math.fibonacci(num-1) + Math.fibonacci(num-2); }
+};
+// console.log(Math.fibonacci(4));
