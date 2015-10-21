@@ -116,3 +116,35 @@ Math.factorial = function(num) {
   return num * Math.factorial(num - 1);
 };
 // console.log(Math.factorial(number));
+
+// var array =[1, 2, 3, 5, [1, 2, [4]]];
+Math.allEven = function(arr) { //find and retrn all even values of an array, no matter how nested
+  var newArray = [];
+  for(var i = 0; i < arr.length; i++) {
+    if(Array.isArray(arr[i])) {
+      newArray = newArray.concat(Math.allEven(arr[i]));
+    } else {
+      if (arr[i]%2 ===0) {
+        newArray.push(arr[i]);
+      }
+    }
+  }
+  return newArray;
+};
+// console.log(Math.allEven(array));
+
+var array =[1, 2, 3, 5, [1, 2, [4]]];
+Math.allOdd = function(arr) { //find and return all odd values of an array, no matter how nested
+  var newArray = [];
+  for(var i = 0; i < arr.length; i++) {
+    if(Array.isArray(arr[i])) {
+      newArray = newArray.concat(Math.allOdd(arr[i]));
+    } else {
+      if (arr[i]%2 !==0) {
+        newArray.push(arr[i]);
+      }
+    }
+  }
+  return newArray;
+};
+// console.log(Math.allOdd(array));
