@@ -171,3 +171,30 @@ Math.fibonacci = function(num) { //fibonacci it up
   else { return Math.fibonacci(num-1) + Math.fibonacci(num-2); }
 };
 // console.log(Math.fibonacci(4));
+
+Math.GCD = function(num1, num2) {  //find greatest common divisor between two numbers
+   if(num1 === 0) { return num2; }
+   if(num2 === 0) { return num1; }
+   else { return Math.GCD(num2, num1 % num2); }
+};
+// console.log(Math.GCD(0, 15));
+
+Math.farenheit = function(temp) { //convert from celsius to farenheit
+  return (temp *(9/5)) + 32;
+};
+// console.log(Math.farenheit(20));
+
+Math.celsius = function(temp) { //convert from farenheit to celsius
+  return (temp -32)*(5/9);
+};
+// console.log(Math.celsius(212));
+
+Math.inches = function(cm) { //convert from centimeters to inches
+  return (cm * 0.39370);
+};
+// console.log(Math.inches(20));
+
+Math.centimeters = function(inch) { //convert from inches to centimeters
+  return (inch/0.39370);
+};
+// console.log(Math.centimeters(7.874));
