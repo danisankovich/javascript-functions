@@ -104,3 +104,15 @@ Math.deepArrayProduct = function(arr) { //multiply all values of an array, no ma
   return product;
 };
 // console.log(Math.deepArrayProduct(array));
+
+// var number = 4;
+Math.factorial = function(num) {
+  if (num < 0) {
+    return undefined;
+  }
+  if (num === 0) {
+    return 1;
+  }
+  return num * Math.factorial(num - 1);
+};
+// console.log(Math.factorial(number));
