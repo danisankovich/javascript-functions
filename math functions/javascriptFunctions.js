@@ -58,6 +58,20 @@ function deepCloneObj(obj) { //clone an object, no matter how many nested object
 // console.log(deepCloneObj(obj));
 
 // var array =[1, 2, 3, 5, [1, 2, [4]]];
+Math.flattenArray = function(arr) { //flatten an array, no matter how deep
+  var newArray = [];
+  for(var i = 0; i < arr.length; i++) {
+    if(Array.isArray(arr[i])) {
+      newArray = newArray.concat(Math.flattenArray(arr[i]));
+    } else {
+      newArray.push(arr[i]);
+    }
+  }
+  return newArray;
+};
+// console.log(Math.flattenArray(array));
+
+// var array =[1, 2, 3, 5, [1, 2, [4]]];
 Math.deepArraySum = function(arr) { //sum all values of an array, no matter how nested
   var newArray = [];
   for(var i = 0; i < arr.length; i++) {
@@ -72,4 +86,21 @@ Math.deepArraySum = function(arr) { //sum all values of an array, no matter how 
   });
   return sum;
 };
-console.log(Math.deepArraySum(array));
+// console.log(Math.deepArraySum(array));
+
+// var array =[1, 2, 3, 5, [1, 2, [4]]];
+Math.deepArrayProduct = function(arr) { //multiply all values of an array, no matter how nested
+  var newArray = [];
+  for(var i = 0; i < arr.length; i++) {
+    if(Array.isArray(arr[i])) {
+      newArray = newArray.concat(Math.deepArrayProduct(arr[i]));
+    } else {
+      newArray.push(arr[i]);
+    }
+  }
+  var product = newArray.reduce(function(a, b) {
+    return a * b;
+  });
+  return product;
+};
+// console.log(Math.deepArrayProduct(array));
