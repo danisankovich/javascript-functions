@@ -1,4 +1,4 @@
-Math.permutate = function(str) {
+Math.permutate = function(str) { //find all possible combinations of a given string.
   var permutations = [];
   var arr = [];
   function permHelper(str, arr) {
@@ -21,7 +21,7 @@ Math.permutate = function(str) {
 };
 // console.log(Math.permutate("yes"));
 
-Math.avg = function(arr) {
+Math.avg = function(arr) {  //find the average value of a given array.
   var sum = arr.reduce(function(a, b){
     return a + b;
   });
@@ -29,7 +29,7 @@ Math.avg = function(arr) {
 };
 // console.log(Math.avg([1, 2, 3, 4, 5]));
 
-Math.median = function(arr) {
+Math.median = function(arr) {  //find the median of a given array
   arr.sort(function(a, b){
     return a-b;
   });
@@ -43,7 +43,7 @@ Math.median = function(arr) {
 };
 // console.log(Math.median([1, 5, 3, 9, 7, 8, 10, 22]));
 
-function deepCloneObj(obj) {
+function deepCloneObj(obj) { //clone an object, no matter how many nested objects lie within.
   var newObj = {};
   for(key in obj) {
     if (typeof obj[key] === 'object') {
@@ -56,3 +56,20 @@ function deepCloneObj(obj) {
   return newObj;
 }
 // console.log(deepCloneObj(obj));
+
+// var array =[1, 2, 3, 5, [1, 2, [4]]];
+Math.deepArraySum = function(arr) { //sum all values of an array, no matter how nested
+  var newArray = [];
+  for(var i = 0; i < arr.length; i++) {
+    if(Array.isArray(arr[i])) {
+      newArray = newArray.concat(Math.deepArraySum(arr[i]));
+    } else {
+      newArray.push(arr[i]);
+    }
+  }
+  var sum = newArray.reduce(function(a, b) {
+    return a + b;
+  });
+  return sum;
+};
+console.log(Math.deepArraySum(array));
