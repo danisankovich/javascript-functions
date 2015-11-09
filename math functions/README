@@ -1,0 +1,47 @@
+1) Math.permutate(str)  takes a string as an argument and returns all possible combinations  (warning. May fail on long strings)
+
+2) Math.avg(arr)   takes an array as an argument and returns the average of all the values.
+
+3) Math.median(arr)    takes an array as an argument and returns the median of all the values.
+
+4) deepCloneObj(obj)    (non-MATH) Takes an object as an argument and returns a deep copy of that object.
+
+5) Math.flattenArray(arr)     takes an array (flat or an array of arrays) and flattens it into a single array, no matter how nested.
+
+6) Math.deepArraySum(arr)     takes an array (however nested) and returns the sum of all numbers in those arrays.
+
+7) Math.deepArrayProduct(arr)      takes an array (however nested) and returns the product of all numbers in those arrays.
+
+8) Math.factorial(num)    takes a number and returns the factorial value of that number
+
+9) Math.allEven(arr)   takes an array (no matter how nested) and returns all of the even values as an array
+
+10) Math.allOdd(arr)     takes an array (no matter how nested) and returns all of the odd values as an array
+
+11) Math.isPrime(num)     takes a number and returns true if it is a prime number
+
+12 Math.fibonacci(num)    performs the fibonacci on a number
+
+13) Math.GCD(num1, num2)     takes two numbers as an argument and finds the greatest common divisor between them.
+
+14) Math.farenheit(celsius)    convert a temp in celsius to farenheit
+
+15) Math.celsius(farenheit)     convert a temp in farenheit to celsius
+
+16) Math.cmToInches(cm)    converts a value in centimeters to inches
+
+17) Math.inchToCentimeters(inch)    converts a value in inches to centimeters
+
+18) Math.circleArea(radius)    takes a radius of a circle and returns the area of that circle.
+
+19) Math.circlePerimeter      takes a radius of a circle and returns the perimeter of that circle.
+
+20) Math.nRoot(base, nth)    takes a base value and a root value, and returns that root of the base.
+
+21) Math.areaTriangle(base, height)    takes a base and height value and returns the area of that triangle.
+
+22) Math.thousandsCommas(num)    takes a number of returns that number with commas in the thousands spots(ex. 10000 => 10,000) (does not work with decimals)
+
+23) Math.milesToKilometers(miles)    takes a number of miles and returns that value in Kilometers
+
+24) Math.KilometersToMiles(kilo)    takes a number of kilometers and returns that value in miles

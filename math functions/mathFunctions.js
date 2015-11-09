@@ -19,7 +19,7 @@ Math.permutate = function(str) { //find all possible combinations of a given str
   permHelper(str, arr);
   return permutations;
 };
-// console.log(Math.permutate("yes"));
+// console.log(Math.permutate("I know"));
 
 Math.avg = function(arr) {  //find the average value of a given array.
   var sum = arr.reduce(function(a, b){
@@ -45,7 +45,7 @@ Math.median = function(arr) {  //find the median of a given array
 
 function deepCloneObj(obj) { //clone an object, no matter how many nested objects lie within.
   var newObj = {};
-  for(key in obj) {
+  for(var key in obj) {
     if (typeof obj[key] === 'object') {
       newObj[key] = deepCloneObj(obj[key]);
     }
@@ -55,7 +55,7 @@ function deepCloneObj(obj) { //clone an object, no matter how many nested object
   }
   return newObj;
 }
-// console.log(deepCloneObj(obj));
+// console.log(deepCloneObj({this: "that", those: "these", time: {times: 123, areas: "noone knows"}}));
 
 // var array =[1, 2, 3, 5, [1, 2, [4]]];
 Math.flattenArray = function(arr) { //flatten an array, no matter how deep
@@ -213,3 +213,21 @@ Math.nRoot = function(base, nth) {
   return Math.pow(base, 1/nth);
 };
 // console.log(Math.nRoot(625, 4));
+
+Math.areaTriangle = function(base, height) {
+  return (base * height)/2;
+};
+// console.log(Math.areaTriangle(10, 5));
+Math.thousandsCommas = function(num) { //put the commas in a number to separate thousands(does not work with decimals)
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); //oh regex
+};
+// console.log(Math.thousandsCommas(10013013013));
+
+Math.milesToKilometers = function(miles) {
+  return miles / 0.62137;
+};
+// console.log(Math.milesToKilometers(500));
+Math.KilometersToMiles = function(kilo) {
+  return kilo * 0.62137;
+};
+// console.log(Math.KilometersToMiles(500));
