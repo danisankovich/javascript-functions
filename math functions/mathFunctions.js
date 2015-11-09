@@ -189,12 +189,27 @@ Math.celsius = function(temp) { //convert from farenheit to celsius
 };
 // console.log(Math.celsius(212));
 
-Math.inches = function(cm) { //convert from centimeters to inches
+Math.cmToInches = function(cm) { //convert from centimeters to inches
   return (cm * 0.39370);
 };
-// console.log(Math.inches(20));
+// console.log(Math.cmToInches(20));
 
-Math.centimeters = function(inch) { //convert from inches to centimeters
+Math.inchToCentimeters = function(inch) { //convert from inches to centimeters
   return (inch/0.39370);
 };
-// console.log(Math.centimeters(7.874));
+// console.log(Math.inchToCentimeters(7.874));
+
+Math.circleArea = function(radius) {
+  return (Math.PI * radius * radius);
+};
+// console.log(Math.circleArea(10));
+
+Math.circlePerimeter = function(radius) {
+  return (Math.PI * radius * 2);
+};
+// console.log(Math.circlePerimeter(10));
+
+Math.nRoot = function(base, nth) {
+  return Math.pow(base, 1/nth);
+};
+// console.log(Math.nRoot(625, 4));
